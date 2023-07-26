@@ -14,7 +14,7 @@ I used all the knowledge which I gained in the course: *[Informatika 101 (zákla
 
 According to the task - *[detailed manual](https://wp.streetofcode.sk/wp-content/uploads/2022/09/Arkadius-zadanie.pdf)*, I created a text-based adventure game. It is a Python program that the player will run, and the game will unfold based on the text displayed in the console. The player will control the game solely through inputs by entering numbers or words representing various choices.
 
-At the beginning of the game, the player will be asked to create a name for their warrior - the hero. Throughout the game, the player will battle against various monsters alongside their warrior. The warrior - hero has the following abilities: attack strength, defense, dexterity, skill, life, and luck. Each ability is good for something different.
+At the beginning of the game, the player will be asked to create a name for their warrior - the hero. Throughout the game, the player will fight against various monsters. The warrior - hero has the following abilities: attack strength, defense, dexterity, skill, life, and luck. Each ability is good for something different.
 
 Before the first battle, the player will receive 7 skill points that they will need to distribute among their warrior's abilities. Then, the warrior goes to fight against the first monster.
 
