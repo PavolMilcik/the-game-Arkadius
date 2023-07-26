@@ -1,0 +1,16 @@
+Hero Name - Opica
+Attack Strength - 10
+Defense - 23
+Dexterity - 4
+Skill - 3
+Life - 60
+Luck - 7
+Game Phase - CHECK_MENU_AFTER_FIGHT
+points for abilities at the beginning of the game - 0
+Available points to Customize - 0
+Was there any Fight? - True
+Fight Level - 5
+Number of Gained Items - 3
+Drink of Luck (LEVEL 2)
+Leather boots (LEVEL 3)
+Roman shield (LEVEL 4)
