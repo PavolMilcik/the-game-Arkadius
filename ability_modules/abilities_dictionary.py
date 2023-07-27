@@ -27,6 +27,7 @@ abilities = {
             }
         }
 
+
 def abilities_dict_def():
 
     for key, value in abilities.items():

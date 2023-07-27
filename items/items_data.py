@@ -11,9 +11,9 @@ items = {
                 "Life": 15
             },
             "tag": "drink",
-            # not replaceable, because - you can have several drinks at once!!!
+            # it is not replaceable, because - you can have several drinks at once!!!
             "replaceable": False,
-            # is destroyed when lost another battle!, because - If you die during a fight, your drink will run out!!!
+            # it is destroyed when you lose battle! because - If you die during a fight, your drink will run out!!!
             "destroy_when_lost": True
         },
         2: {
@@ -25,9 +25,9 @@ items = {
                 "Defense": 2
             },
             "tag": "armor",
-            # is replaceable, because you can't have several armors at once!!!
+            # it is replaceable, because you can't have several armors at once!!!
             "replaceable": True,
-            # not destroyed when lost another battle!, because it will stay with you until the end of the game,
+            # it is not destroyed when you lose battle! because it will stay with you until the end of the game,
             # or until you replace it with another armor!!!
             "destroy_when_lost": False
         },

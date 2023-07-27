@@ -2,8 +2,9 @@ import time
 import phase.phase_constants as phase_const
 import game_constants
 from enemy_data import enemies
-from abilities_modules.abilities_dictionary import abilities
+from ability_modules.abilities_dictionary import abilities
 from phase.gained_items_check import check_gained_items
+
 
 def check_menu_after_fight():
     print("------------------------- Menu of the game:")
@@ -50,7 +51,7 @@ def check_menu_after_fight():
                     new_string_input += " "
             check_input = new_string_input
 
-        # when user choose, return will be...
+        # when the user makes a choice, a 'return' to the chosen phase will occur:
         if check_input in check_menu_dict.keys() or check_input in check_menu_dict.values():
             if check_input == "0" or check_input == "Take a rest":
                 print("\n------ You choose: 0 - Take a rest to upgrade Life by 20 points.\n")

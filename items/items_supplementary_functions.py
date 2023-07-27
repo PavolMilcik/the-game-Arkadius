@@ -1,18 +1,20 @@
-from abilities_modules.abilities_dictionary import abilities
+from ability_modules.abilities_dictionary import abilities
 import game_constants
 
 from items.items_data import items
 from items.gained_items_constants import gained_items_dict
 from items import gained_items_constants
 
-# ---------------------------- Supplementary Functions - of items, when WIN or LOSE ------------------------
+
+# ---------------------- Supplementary Functions - of items, when player WON or LOST battle ----------------
+
 def items_options_to_choose(param_level):
     # item_temp_level_dict = { 1: "Drink of Life (LEVEL 1)", 2: "Fabric armor (LEVEL 1)", ... }
     # item_temp_level_list = [Drink of Life, Fabric armor, ...]
     item_temp_level_dict = {}
     item_temp_level_list = []
 
-    # print items to choose in the current round and their description
+    # print items to choose from and their descriptions in the current round
     for i in items[param_level]:
         for k, v in items[param_level][i].items():
             if k == "name":
@@ -26,7 +28,7 @@ def items_options_to_choose(param_level):
                 print(str(v))
 
     print("")
-    # return new dict and list with items to choose after battle
+    # after battle, return new dict and list with items to choose
     return item_temp_level_dict, item_temp_level_list
 
 
@@ -38,8 +40,8 @@ def replace_item_or_no(param_chosen_item, param_level):
             if j == param_chosen_item:
                 actual_tag = items[param_level][i]["tag"]
 
-    # is replaceable item with same tag in hero_gained_items?
-    # if yes create variable item_to_replace
+    # is it replaceable item with same tag in gained_items_dict?
+    # if yes, create variable item_to_replace
     item_to_replace = ""
     for i in gained_items_dict:
         for j in gained_items_dict[i].values():
@@ -69,7 +71,7 @@ def replace_item_or_no(param_chosen_item, param_level):
 
 
 def pop_replaced_item_and_remove_old_points(param_replaced_item, param_new_item):
-    # remove abilities points of replaced item from hero abilities points
+    # remove ability points of replaced item from hero ability points
     abilities_and_points_to_remove = {}
     for k, v in gained_items_dict[param_replaced_item]["ability"].items():
         abilities_and_points_to_remove[k] = v
@@ -96,8 +98,8 @@ def adjust_life_points():
         abilities["Life"]["points"] = game_constants.MAX_LIFE_POINTS
 
 
-def item_changed_abilities_points(param_level, param_chosen_new_item, param_chosen_new_item_int):
-    # variable - integer, in which part of current level - is abilities to increase or decrease
+def item_changed_ability_points(param_level, param_chosen_new_item, param_chosen_new_item_int):
+    # variable - integer, in which part of current level - is ability to increase or decrease
     find_ablts_in_chosen_item = int()
     for i in items[param_level]:
         for k, v in items[param_level][i].items():
@@ -109,7 +111,7 @@ def item_changed_abilities_points(param_level, param_chosen_new_item, param_chos
     for k, v in items[param_level][find_ablts_in_chosen_item]["ability"].items():
         ablts_to_change[k] = v
 
-    # increase or decrease abilities points with chosen item
+    # increase or decrease ability points with chosen item
     for k, v in ablts_to_change.items():
         for i in abilities:
             if k == i:
@@ -117,7 +119,7 @@ def item_changed_abilities_points(param_level, param_chosen_new_item, param_chos
                 if abilities[i]["points"] < 0:
                     abilities[i]["points"] = 0
 
-    # print abilities points which was increased
+    # print ability points which was increased
     for k, v in items[param_level][param_chosen_new_item_int]["ability"].items():
         if v > 0:
             print(" -> this item gives you: " + str(v) + " points for ability: " + str(k))
@@ -125,12 +127,12 @@ def item_changed_abilities_points(param_level, param_chosen_new_item, param_chos
             print(" -> this item removes: " + str(v) + " points from your ability: " + str(k))
     print("Your abilities were upgraded! Check it in: \'Menu of the game\' in part: \'3 - Customize the Hero\' \n\n")
 
-    # if Life points are bigger than 60 points
+    # if Life points are greater than 60 points
     adjust_life_points()
 
 
-def write_new_items_to_hero_gained_items(param_f_level, chosen_new_item_string):
-    # WRITE GAINED ITEMS to new dict - hero_gained_items
+def write_new_items_to_gained_items_dict(param_f_level, chosen_new_item_string):
+    # WRITE GAINED ITEMS to new dict - gained_items_dict
     for i in items[param_f_level]:
         for k, v in items[param_f_level][i].items():
             if v == chosen_new_item_string:

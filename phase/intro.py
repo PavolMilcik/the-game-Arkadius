@@ -42,9 +42,7 @@ def star_new_game_def():
             continue
         elif start_new_game_input == 1:
             print("------ Great. Hero, let's start new game with choosing your name.\n\n")
-            # break
             return phase_const.NAME
         elif start_new_game_input == 0:
             print("------ Damn, why are you afraid?\n\n")
-            # break
             return phase_const.END_THE_GAME

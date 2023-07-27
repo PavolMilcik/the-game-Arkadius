@@ -1,12 +1,12 @@
 import time
 
-from abilities_modules import abilities_dictionary
+from ability_modules import abilities_dictionary
 from phase import name
 import game_constants
 from items.items_main_functions import items_when_lose_battle
 
 
-
+# -------------------------------------------- If hero lost battle and enemy won battle:
 def hero_lose_battle(param_fight_level):
     hero_name = name.hero_name
     hero_abilities = abilities_dictionary.abilities
@@ -20,11 +20,12 @@ def hero_lose_battle(param_fight_level):
           "\nYou need to take a rest to upgrade your Life points and then you can change abilities points.\n")
     print(game_constants.DIVIDER)
 
-    # here going phase when we lose battle
+    # So, here comes the phase of the game when the player lost the battle.
     if param_fight_level > 1:
-        # so this phase is about lose some gained Items
+        # This phase is about losing some gained items.
         items_when_lose_battle(param_fight_level)
 
         time.sleep(1)
-        # decrease Level of Fights
+        # decrease the fight level:
         game_constants.FIGHT_LEVEL -= 1
+    

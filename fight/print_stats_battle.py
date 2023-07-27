@@ -1,11 +1,11 @@
-from abilities_modules import abilities_dictionary
+from ability_modules import abilities_dictionary
 from phase import name
 import enemy_data
 
 from fight.values_of_attack_defense import hero_fight_value, enemy_fight_value
 
 
-# ---------------------------------- 2.Supplementary Functions - of BATTLE ---------------------------
+# ----------------------- Print the hero's and the enemy's battle scheme prepared for the fight. ----------------
 def print_hero_stats():
     hero_name = name.hero_name
     hero_abilities = abilities_dictionary.abilities

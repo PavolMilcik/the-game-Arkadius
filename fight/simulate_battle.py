@@ -1,7 +1,7 @@
 import random
 import time
 
-from abilities_modules import abilities_dictionary
+from ability_modules import abilities_dictionary
 from phase import name
 import enemy_data
 import game_constants
@@ -11,7 +11,7 @@ from fight.hero_lose import hero_lose_battle
 from fight.hero_win import hero_win_battle
 
 
-# ---------------------------------- 3.Supplementary Functions - of BATTLE ---------------------------
+# -------------------------------- Battle simulation - the fight starts! -------------------------
 def simulate_battle(fight_level):
     hero_name = name.hero_name
     hero_abilities = abilities_dictionary.abilities
@@ -26,15 +26,15 @@ def simulate_battle(fight_level):
 
     # --------------------------------------- battle - attacks start
     while True:
-        # hero random attack and random defense
+        # the hero's random attack and random defense
         hero_random_attack = random.randint(hero_attack_min, hero_attack_max)
         hero_random_defense = random.randint(hero_defense_min, hero_defense_max)
 
-        # enemy random attack and random defense
+        # enemy's random attack and random defense
         enemy_random_attack = random.randint(enemy_attack_min, enemy_attack_max)
         enemy_random_defense = random.randint(enemy_defense_min, enemy_defense_max)
 
-        # hero attack
+        # the hero's attacks
         if enemy_life > 0 and hero_abilities["Life"]["points"] > 0:
             time.sleep(1)
             if is_critical_hit(hero_critical_attack):
@@ -51,7 +51,7 @@ def simulate_battle(fight_level):
         else:
             break
 
-        # enemy attack
+        # the enemy's attacks
         if hero_abilities["Life"]["points"] > 0 and enemy_life > 0:
             time.sleep(1)
             if is_critical_hit(enemy_critical_attack):
@@ -69,11 +69,11 @@ def simulate_battle(fight_level):
             break
 
 
-    # ------- after attacks, after battle
-    # if hero lose and enemy win
+    # ------- After all attacks and after the battle:
+    # if hero lost battle and enemy won battle
     if hero_abilities["Life"]["points"] <= 0:
         hero_lose_battle(fight_level)
 
-    # if hero win and enemy lose
+    # if hero won battle and enemy lost battle
     elif enemy_life <= 0:
         hero_win_battle(fight_level)

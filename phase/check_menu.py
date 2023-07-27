@@ -10,15 +10,15 @@ def check_menu_def():
                        "Customize the Hero", "Save the Game", "End the Game"]
     check_menu_list = enumerate(check_menu_list, 1)
     check_menu_dict = dict(check_menu_list)
-    # print(check_menu_dict)
 
-    # new_dict = {}
+    
+    # --- Add list/dict comprehension instead classic for loop.
+    # --- for loop
+    # check_menu_dict = {}
     # for k, v in check_menu_dict.items():
-    #     new_dict[str(k)] = v
-    # print(new_dict)
-
+    #     check_menu_dict[str(k)] = v
+    # --- dict comprehension:
     check_menu_dict = {str(k): v for k, v in check_menu_dict.items()}
-    # print(check_menu_dict)
 
     while True:
 
@@ -53,7 +53,7 @@ def check_menu_def():
                     new_string_input += " "
             check_input = new_string_input
 
-        # when user choose, return will be...
+        # when the user makes a choice, a 'return' to the chosen phase will occur:
         if check_input in check_menu_dict.keys() or check_input in check_menu_dict.values():
             if check_input == "1" or check_input == "Start the Fight":
                 print("\n------ You choose: 1 - Start the Fight against: " + enemies[game_constants.FIGHT_LEVEL]["name"] + "\n")

@@ -1,11 +1,11 @@
-# This is the main file of the whole project - Arkadius game!
+# This is the main file of the whole project - the game Arkadius!
 import game_constants
 import phase.phase_constants as phase_const
 import game_constants as game_const
 from game_constants import DIVIDER
 from phase.intro import intro_game_def, star_new_game_def
 from phase.name import name_of_hero_def
-from abilities_modules.abilities_options import abilities_options_def
+from ability_modules.ability_options import ability_options_def
 from phase.check_menu import check_menu_def
 from phase.customize_hero import customize_hero_001
 from phase.save_load import save_game
@@ -16,10 +16,10 @@ from phase.won_game import won_game_function
 
 
 print(DIVIDER + "\n\n\n")
-# the phase when we first start the game:
+# the phase, when we start the game for the first time:
 current_phase = phase_const.INTRO
 
-# here the phases of the game are changed according to the requirements:
+# here, the phases of the game are changed according to the player's requirements:
 while True:
     if current_phase == phase_const.INTRO:
         print("\n" + DIVIDER)
@@ -41,7 +41,7 @@ while True:
 
     elif current_phase == phase_const.INTRO_ABILITIES:
         print(DIVIDER)
-        current_phase = abilities_options_def()
+        current_phase = ability_options_def()
 
     elif current_phase == phase_const.CHECK_MENU:
         print(DIVIDER)

@@ -1,4 +1,4 @@
-def abilities_points_def(param_abilities_dict):
+def ability_points_def(param_abilities_dict):
     abilities_dict = param_abilities_dict
 
     temp_number = 0

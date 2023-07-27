@@ -1,5 +1,5 @@
 DIVIDER = "------------------------------------------------------------------------------------------------------------"
-ABILITIES_POINTS_TO_INCREASE = 7
+ABILITY_POINTS_TO_INCREASE = 7
 AVAILABLE_POINTS_TO_CUSTOMIZE = 0
 SAVE_PHASE = ""
 FIGHT_LEVEL = 1

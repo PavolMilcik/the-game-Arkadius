@@ -1,5 +1,6 @@
 import phase.phase_constants as phase_const
 
+
 hero_name = ""
 
 def name_of_hero_def():
@@ -24,6 +25,5 @@ def name_of_hero_def():
                 break
         if confirm_hero_name_input == 1:
             print("\n------ This is your hero name: " + str(name_of_hero_input) + ".\n\n\n")
-            # break
             hero_name = name_of_hero_input
             return phase_const.INTRO_ABILITIES

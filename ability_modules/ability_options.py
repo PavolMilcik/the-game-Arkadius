@@ -1,31 +1,31 @@
 import game_constants
-from abilities_modules.abilities_points import abilities_points_def
+from ability_modules.ability_points import ability_points_def
 import phase.phase_constants as phase_const
 import phase.name
-import abilities_modules.abilities_dictionary
-from abilities_modules.abilities_dictionary import abilities_dict_def
+import ability_modules.abilities_dictionary
+from ability_modules.abilities_dictionary import abilities_dict_def
 from game_constants import DIVIDER
 
-def abilities_options_def():
-    abilities_dict = abilities_modules.abilities_dictionary.abilities
+
+def ability_options_def():
+    abilities_dict = ability_modules.abilities_dictionary.abilities
     name_of_hero = phase.name.hero_name
 
-
     print("------------------------- " + str(name_of_hero) + ", your abilities at the beginning of the game look like this:")
-    abilities_points_def(abilities_dict)
+    ability_points_def(abilities_dict)
 
     print("\n\n" + DIVIDER)
     print("------ At the beginning of the game, you have " +
-          str(game_constants.ABILITIES_POINTS_TO_INCREASE) + " points to increase your abilities.")
+          str(game_constants.ABILITY_POINTS_TO_INCREASE) + " points to increase your abilities.")
     print("------ Notice!!!\nOnly for Life ability, 1 point adds 5 points! "
           "For others abilities, 1 point add 1 point to ability.\n")
 
-    while game_constants.ABILITIES_POINTS_TO_INCREASE > 0:
-        if game_constants.ABILITIES_POINTS_TO_INCREASE > 1:
-            print("\n------------------------- There are still " + str(game_constants.ABILITIES_POINTS_TO_INCREASE) +
+    while game_constants.ABILITY_POINTS_TO_INCREASE > 0:
+        if game_constants.ABILITY_POINTS_TO_INCREASE > 1:
+            print("\n------------------------- There are still " + str(game_constants.ABILITY_POINTS_TO_INCREASE) +
                   " points to add to your abilities.")
         else:
-            print("\n------------------------- There is still " + str(game_constants.ABILITIES_POINTS_TO_INCREASE) +
+            print("\n------------------------- There is still " + str(game_constants.ABILITY_POINTS_TO_INCREASE) +
                   " point to add to your abilities.")
         print("\nFor explanation of the features of the abilities, write: \n\t0 - Explanation")
 
@@ -83,22 +83,22 @@ def abilities_options_def():
                       " is max points for ability LIFE! Try increase another ability.")
                 continue
             abilities_dict[user_choose_ability_to_increase]["points"] += 5
-            game_constants.ABILITIES_POINTS_TO_INCREASE -= 1
+            game_constants.ABILITY_POINTS_TO_INCREASE -= 1
         else:
             abilities_dict[user_choose_ability_to_increase]["points"] += 1
-            game_constants.ABILITIES_POINTS_TO_INCREASE -= 1
+            game_constants.ABILITY_POINTS_TO_INCREASE -= 1
 
         print("\n------ Now your abilities points look like this:")
-        abilities_points_def(abilities_dict)
+        ability_points_def(abilities_dict)
         print("")
 
-        if game_constants.ABILITIES_POINTS_TO_INCREASE <= 0:
+        if game_constants.ABILITY_POINTS_TO_INCREASE <= 0:
             break
 
     print("\n" + DIVIDER)
     print("------------------------- Well done " + str(name_of_hero) +
           ".\nYou finished adding points to your abilities. For recapitulation, your abilities now look like this:")
-    abilities_points_def(abilities_dict)
+    ability_points_def(abilities_dict)
     print("\n\n")
 
     return phase_const.CHECK_MENU

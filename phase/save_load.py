@@ -1,12 +1,13 @@
 import phase.name
 import phase.phase_constants as phase_const
-from abilities_modules.abilities_dictionary import abilities
+from ability_modules.abilities_dictionary import abilities
 import game_constants
 from items.gained_items_constants import gained_items_dict
 from items import gained_items_constants
 from items.items_data import items
 
 import os
+
 
 def save_game():
     print("------------------------- How do you want to name the saved game?")
@@ -22,10 +23,6 @@ def save_game():
             continue
 
     if user_save_game_input:
-        # file_handler_all_saved_game = open("saved_games/all_saved_games.txt", "a", encoding="utf-8")
-        # file_handler_all_saved_game.write(str(user_save_game_input) + "\n")
-        # file_handler_all_saved_game.close()
-
         file_handler_saved_game = open("saved_games/" + user_save_game_input + ".txt", "w", encoding="utf-8")
         # save Hero name
         file_handler_saved_game.write("Hero Name - " + str(phase.name.hero_name) + "\n")
@@ -39,7 +36,7 @@ def save_game():
         file_handler_saved_game.write("Game Phase - " + str(game_constants.SAVE_PHASE) + "\n")
         # save abilities_points_to_increase which are only at the first start of the game
         file_handler_saved_game.write("points for abilities at the beginning of the game - " +
-                                      str(game_constants.ABILITIES_POINTS_TO_INCREASE) + "\n")
+                                      str(game_constants.ABILITY_POINTS_TO_INCREASE) + "\n")
         # save available_points_to_customize
         file_handler_saved_game.write("Available points to Customize - " + str(game_constants.AVAILABLE_POINTS_TO_CUSTOMIZE) + "\n")
         # save boolean True or False if was first fight or no
@@ -64,31 +61,17 @@ def save_game():
 
 
 def load_game():
-
-    # check if EXIST file
-    # if os.path.exists("saved_games/all_saved_games.txt") is False:
-    #     print("------ There are not any Load Game! Start new game!\n")
-    #     return phase_const.START_NEW_GAME
-
-    # check if file saved_games/all_saved_games.txt is EMPTY
-    # if os.path.getsize("saved_games/all_saved_games.txt") == 0:
-    #     print("------ There are not any Load Game! Start new game!\n")
-    #     return phase_const.START_NEW_GAME
-
-
     dict_load_games = {}
     selected_load_game = ""
 
     # check if EXIST directory saved_games
     if os.path.isdir("saved_games") is False:
         print("------ There are no Saved Games! Start new game!\n")
-        # print("Directory not exist!")
         return phase_const.START_NEW_GAME
 
     # check if directory saved_games is EMPTY
     if not os.listdir("saved_games"):
         print("------ There are no Saved Games! Start new game!\n")
-        # print("Directory exist, but is empty!")
         return phase_const.START_NEW_GAME
     else:
         print("------------------------- Which game do you want to load?")
@@ -169,7 +152,7 @@ def loading_and_rewriting_game(selected_game):
 
     # load and rewrite abilities_points_to_increase which are only at the first start of the game
     find_dash = dict_loading_game[8].find("-")
-    game_constants.ABILITIES_POINTS_TO_INCREASE = int(dict_loading_game[8][find_dash+2:])
+    game_constants.ABILITY_POINTS_TO_INCREASE = int(dict_loading_game[8][find_dash+2:])
 
     # load and rewrite available_points_to_customize
     find_dash = dict_loading_game[9].find("-")
