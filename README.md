@@ -4,7 +4,7 @@ I created a console game - Arkadius, where our hero fights against monsters. The
 
 ## A project for my portfolio in the form of a console game in Python :snake:
 
-I derived comprehensive information from a *[detailed manual](https://wp.streetofcode.sk/wp-content/uploads/2022/09/Arkadius-zadanie.pdf)*, with the help of which I was able to create this game - Arkadius, even without watching the help videos from a course *[Arkadius](https://streetofcode.sk/kurzy/arkadius)*.
+I based on comprehensive information from a *[detailed manual](https://wp.streetofcode.sk/wp-content/uploads/2022/09/Arkadius-zadanie.pdf)*, with the help of which I was able to create this game - Arkadius, even without watching the help videos from a course *[Arkadius](https://streetofcode.sk/kurzy/arkadius)*.
 
 I used all the knowledge which I gained in the course: *[Informatika 101 (základy programovania v Pythone)](https://streetofcode.sk/kurzy/informatika-101)* from *Street of Code*.
 
