@@ -24,7 +24,7 @@ while True:
     if current_phase == phase_const.INTRO:
         print("\n" + DIVIDER)
         current_phase = intro_game_def()
-    
+
     elif current_phase == phase_const.START_NEW_GAME:
         print("\n\n" + DIVIDER)
         current_phase = star_new_game_def()

@@ -79,7 +79,7 @@ def remove_points_003():
 
         # capitalize input
         customize_check_input_003 = capitalize_input(customize_check_input_003)
-        if customize_check_input_003 == False:
+        if customize_check_input_003 is False:
             print("Please select only the ability that is in the options!\n")
             continue
 
@@ -161,7 +161,7 @@ def add_points_004():
 
         # capitalize input
         customize_check_input_004 = capitalize_input(customize_check_input_004)
-        if customize_check_input_004 == False:
+        if customize_check_input_004 is False:
             print("Please select only the ability that is in the options!\n")
             continue
 

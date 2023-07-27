@@ -41,7 +41,7 @@ def ability_options_def():
         
         # capitalize input
         user_choose_ability_to_increase = capitalize_input(user_choose_ability_to_increase)
-        if user_choose_ability_to_increase == False:
+        if user_choose_ability_to_increase is False:
             print("Please select only the ability that is in the options!\n")
             continue
         
