@@ -4,6 +4,7 @@ import phase.phase_constants as phase_const
 import game_constants
 from ability_modules.abilities_dictionary import abilities
 from ability_modules.abilities_dictionary import abilities_dict_def
+from utils.capitalize_strings import capitalize_input
 
 
 def customize_hero_001():
@@ -77,25 +78,10 @@ def remove_points_003():
         customize_check_input_003 = input("------ Which ability you choose to remove point from?: ")
 
         # capitalize input
-        temp_list_001 = []
-        temp_string_001 = ""
-        if " " in customize_check_input_003:
-            find_space = customize_check_input_003.find(" ")
-            if find_space == 0 or find_space == len(customize_check_input_003):
-                print("Please select only the ability that is in the options!\n")
-                continue
-            else:
-                temp_list_001.append(customize_check_input_003[0:find_space])
-                temp_list_001.append(customize_check_input_003[find_space + 1:])
-            for i in range(len(temp_list_001)):
-                temp_list_001[i] = temp_list_001[i].capitalize()
-                if i == len(temp_list_001) - 1:
-                    temp_string_001 += temp_list_001[i]
-                else:
-                    temp_string_001 += temp_list_001[i] + " "
-            customize_check_input_003 = temp_string_001
-        else:
-            customize_check_input_003 = customize_check_input_003.capitalize()
+        customize_check_input_003 = capitalize_input(customize_check_input_003)
+        if customize_check_input_003 == False:
+            print("Please select only the ability that is in the options!\n")
+            continue
 
         # if input is 0 break
         if customize_check_input_003 == "0" or customize_check_input_003 == "Go Back!":
@@ -174,25 +160,10 @@ def add_points_004():
         customize_check_input_004 = input("------ Which ability you choose to add points?: ")
 
         # capitalize input
-        temp_list_001 = []
-        temp_string_001 = ""
-        if " " in customize_check_input_004:
-            find_space = customize_check_input_004.find(" ")
-            if find_space == 0 or find_space == len(customize_check_input_004):
-                print("Please select only the ability that is in the options!\n")
-                continue
-            else:
-                temp_list_001.append(customize_check_input_004[0:find_space])
-                temp_list_001.append(customize_check_input_004[find_space + 1:])
-            for i in range(len(temp_list_001)):
-                temp_list_001[i] = temp_list_001[i].capitalize()
-                if i == len(temp_list_001) - 1:
-                    temp_string_001 += temp_list_001[i]
-                else:
-                    temp_string_001 += temp_list_001[i] + " "
-            customize_check_input_004 = temp_string_001
-        else:
-            customize_check_input_004 = customize_check_input_004.capitalize()
+        customize_check_input_004 = capitalize_input(customize_check_input_004)
+        if customize_check_input_004 == False:
+            print("Please select only the ability that is in the options!\n")
+            continue
 
         # if input is 0 break
         if customize_check_input_004 == "0" or customize_check_input_004 == "Go Back!":

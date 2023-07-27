@@ -5,6 +5,7 @@ import phase.name
 import ability_modules.abilities_dictionary
 from ability_modules.abilities_dictionary import abilities_dict_def
 from game_constants import DIVIDER
+from utils.capitalize_strings import capitalize_input
 
 
 def ability_options_def():
@@ -37,33 +38,18 @@ def ability_options_def():
             print("\t" + str(i+1) + " -", list_abilities_keys[i])
 
         user_choose_ability_to_increase = input("First, choose an ability to upgrade by adding some points: ")
-
+        
+        # capitalize input
+        user_choose_ability_to_increase = capitalize_input(user_choose_ability_to_increase)
+        if user_choose_ability_to_increase == False:
+            print("Please select only the ability that is in the options!\n")
+            continue
+        
         if user_choose_ability_to_increase == "0" or user_choose_ability_to_increase == "Explanation":
             print("\n\n------ Explanation of the features of the abilities:")
             abilities_dict_def()
             print("")
             continue
-
-        # capitalize input
-        temp_list_001 = []
-        temp_string_001 = ""
-        if " " in user_choose_ability_to_increase:
-            find_space = user_choose_ability_to_increase.find(" ")
-            if find_space == 0 or find_space == len(user_choose_ability_to_increase):
-                print("Please select only the ability that is in the options!\n")
-                continue
-            else:
-                temp_list_001.append(user_choose_ability_to_increase[0:find_space])
-                temp_list_001.append(user_choose_ability_to_increase[find_space + 1:])
-            for i in range(len(temp_list_001)):
-                temp_list_001[i] = temp_list_001[i].capitalize()
-                if i == len(temp_list_001) - 1:
-                    temp_string_001 += temp_list_001[i]
-                else:
-                    temp_string_001 += temp_list_001[i] + " "
-            user_choose_ability_to_increase = temp_string_001
-        else:
-            user_choose_ability_to_increase = user_choose_ability_to_increase.capitalize()
 
         # if input is str - 1, 2, 3, 4, 5, 6
         if user_choose_ability_to_increase in new_choose_ability_dict.keys():
