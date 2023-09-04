@@ -12,7 +12,7 @@ def name_of_hero_def():
         print("------ Hero name: " + str(name_of_hero_input) + "\n\n")
         while True:
             confirm_hero_name_input = input("------ Confirm hero name."
-                                            "\n1 - I agree. \n0 - Change name.\nYour choice is: ")
+                                            "\n0 - Change name. \n1 - I agree.\nYour choice is: ")
             try:
                 confirm_hero_name_input = int(confirm_hero_name_input)
             except ValueError:
