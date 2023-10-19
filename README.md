@@ -1,8 +1,8 @@
-# A console game - Arkadius :dagger:
+# A text-based console game - Arkadius :dagger:
 
-I created a console game - Arkadius, where our hero fights against monsters. They improve abilities, gain items and go through levels.
+I created a text-based console game - Arkadius, where our hero fights against monsters. They improve abilities, gain items and go through levels.
 
-## A project for my portfolio in the form of a console game in Python :snake:
+## A project for my portfolio in the form of a text-based console game in Python :snake:
 
 I based on comprehensive information from a *[detailed manual](https://wp.streetofcode.sk/wp-content/uploads/2022/09/Arkadius-zadanie.pdf)*, with the help of which I was able to create this game - Arkadius, even without watching the help videos from a course *[Arkadius](https://streetofcode.sk/kurzy/arkadius)*.
 
