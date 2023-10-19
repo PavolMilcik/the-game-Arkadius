@@ -1,4 +1,4 @@
-# A text-based console game - Arkadius :dagger:
+## A text-based console game - Arkadius :dagger:
 
 I created a text-based console game - Arkadius, where our hero fights against monsters. They improve abilities, gain items and go through levels.
 
