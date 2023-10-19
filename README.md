@@ -8,9 +8,8 @@ I based on comprehensive information from a *[detailed manual](https://wp.street
 
 I used all the knowledge which I gained in the course: *[Informatika 101 (základy programovania v Pythone)](https://streetofcode.sk/kurzy/informatika-101)* from *Street of Code*.
 
-##
 
-### What game have I created? :technologist:
+## What game have I created? :technologist:
 
 According to the task - *[detailed manual](https://wp.streetofcode.sk/wp-content/uploads/2022/09/Arkadius-zadanie.pdf)*, I created a text-based adventure game. It is a Python program that the player will run, and the game will unfold based on the text displayed in the console. The player will control the game solely through inputs by entering numbers or words representing various choices.
 
